@@ -1,0 +1,9 @@
+Select nev,kor from tanarok where kor > (Select MAX(kor) from tanulok);
+Select nev, kor from tanarok where kor in (Select kor from tanulok);	
+Select nev, kor from tanarok where kor not in (Select kor from tanulok);
+Select nev, kor from tanarok where kor > ALL (Select distinct kor from tanulok);
+Select nev, kor from tanarok where kor < ALL (Select distinct kor from tanulok);
+Select nev, kor from tanarok where kor not in (Select distinct kor from tanulok);
+Select nev, kor from tanarok where kor > any (Select distinct kor from tanulok);
+Select nev, kor from tanarok where kor > (Select distinct min(kor) from tanulok);
+Select nev, kor from tanarok where kor = any (Select distinct kor from tanulok);
